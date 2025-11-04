@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<!-- SEO básico -->
+<meta name="description" content="Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB): MDQ, HCL-32, BSDS e MINI (módulo bipolar). Triagem clínica com relatório integrado.">
+<meta name="keywords" content="transtorno afetivo bipolar, TAB, MDQ, HCL-32, BSDS, MINI, rastreio, triagem clínica, psicologia">
+<meta name="author" content="Richelmy Murta, Psicólogo Clínico">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0f172a">
+
+<!-- Canonical (ajuste para a URL final da página) -->
+<link rel="canonical" href="https://exemplo.seu-dominio.com/TAB.html">
+
+<!-- Open Graph (WhatsApp/Facebook/LinkedIn) -->
+<meta property="og:title" content="Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB)">
+<meta property="og:description" content="Aplicação integrada de MDQ, HCL-32, BSDS e MINI para triagem clínica. Resultados claros e relatório justificado.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://exemplo.seu-dominio.com/TAB.html">
+<meta property="og:site_name" content="Richelmy Murta Psicologia">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Imagem de pré-visualização (WhatsApp usa estes) -->
+<meta property="og:image" content="https://i.pinimg.com/1200x/6f/8e/f6/6f8ef66da1d95a7401ef370c7e2752f2.jpg">
+<meta property="og:image:secure_url" content="https://i.pinimg.com/1200x/6f/8e/f6/6f8ef66da1d95a7401ef370c7e2752f2.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capa da Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB)">
+
+<!-- Twitter Card (boa prática) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB)">
+<meta name="twitter:description" content="MDQ, HCL-32, BSDS e MINI (módulo bipolar) em um único fluxo de triagem clínica.">
+<meta name="twitter:image" content="https://i.pinimg.com/1200x/6f/8e/f6/6f8ef66da1d95a7401ef370c7e2752f2.jpg">
+
+<!-- Ícones (opcional, ajuste caminhos) -->
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180">
+
+<!-- JSON-LD (estrutura básica do aplicativo/página) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB)",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "url": "https://exemplo.seu-dominio.com/TAB.html",
+  "image": "https://i.pinimg.com/1200x/6f/8e/f6/6f8ef66da1d95a7401ef370c7e2752f2.jpg",
+  "description": "Aplicação de triagem clínica com MDQ, HCL-32, BSDS e MINI para estimar probabilidade de espectro bipolar e gerar relatório integrado."
+}
+</script>
+<style>
+  :root{
+    --bg:#0f172a; --panel:#0b1224; --card:#111827; --text:#e5e7eb; --muted:#9aa4b2;
+    --accent:#22d3ee; --accent2:#a78bfa; --border:rgba(255,255,255,.12); --field:#0b1224;
+    --ok:#22c55e; --warn:#f59e0b; --bad:#ef4444; --focus:#60a5fa; --shadow:0 10px 30px rgba(0,0,0,.35);
+    --r:16px;
+  }
+  [data-theme="light"]{
+    --bg:#f1f5f9; --panel:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#475569;
+    --accent:#0891b2; --accent2:#7c3aed; --border:rgba(2,6,23,.12); --field:#f8fafc;
+    --ok:#16a34a; --warn:#d97706; --bad:#dc2626; --focus:#2563eb; --shadow:0 12px 28px rgba(2,6,23,.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.45}
+  .wrap{max-width:1200px;margin:0 auto;padding:24px}
+  header{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);margin-bottom:20px}
+  h1{margin:0 0 6px 0;letter-spacing:.2px}
+  .lead{margin:6px 0 0 0;color:var(--muted);text-align:justify}
+  .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .toggle{display:inline-flex;align-items:center;gap:8px}
+  .switch{width:52px;height:30px;border-radius:20px;background:var(--card);border:1px solid var(--border);position:relative}
+  .switch i{position:absolute;top:3px;left:3px;width:24px;height:24px;background:linear-gradient(#fff,#e5e7eb);border-radius:999px;transition:left .15s}
+  [data-theme="light"] .switch i{left:25px}
+  .onb{margin-top:12px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
+  .onb ol{margin:0;padding-left:18px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);padding:20px;margin-bottom:18px}
+  .grid{display:grid;gap:16px;grid-template-columns:1fr}
+  .grid2{display:grid;grid-template-columns:1fr}
+  @media(min-width:980px){.grid2{grid-template-columns:1fr 1fr;gap:16px}}
+  label{font-weight:700;margin-bottom:6px;display:block}
+  input,select,textarea{width:100%;padding:12px 14px;background:var(--field);color:var(--text);border:1px solid var(--border);border-radius:12px;outline:none}
+  select option{color:var(--text)}
+  textarea{min-height:110px;resize:vertical}
+  .q{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;cursor:pointer;color:#fff;background:linear-gradient(120deg,var(--accent),var(--accent2));font-weight:800;box-shadow:0 10px 18px rgba(0,0,0,.25)}
+  .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+  .btn.whats{background:#25D366;color:#083d1a}
+  .out{margin-top:10px;padding:14px;border-radius:12px;background:var(--card);border:1px dashed var(--border);white-space:pre-wrap}
+  .muted{color:var(--muted)}
+  .stat{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800}
+  .ok{background:rgba(34,197,94,.15);color:var(--ok);border:1px solid rgba(34,197,94,.4)}
+  .warn{background:rgba(245,158,11,.15);color:var(--warn);border:1px solid rgba(245,158,11,.4)}
+  .bad{background:rgba(239,68,68,.15);color:var(--bad);border:1px solid rgba(239,68,68,.4)}
+  .invalid{border-color:var(--bad) !important;box-shadow:0 0 0 3px rgba(239,68,68,.18)}
+  .para{text-align:justify}
+  details{border:1px solid var(--border);border-radius:12px;background:var(--panel);padding:10px}
+  details summary{cursor:pointer;font-weight:800}
+  footer{margin:28px 0 8px;text-align:center;color:var(--muted)}
+  /* oculta qualquer dica de corte visível ao paciente */
+  .criteria{display:none !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="topbar">
+      <div>
+        <h1>Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB)</h1>
+        <p class="lead para">
+          Este instrumento reúne MDQ, HCL-32, BSDS e o módulo bipolar do MINI para *triagem clínica*. As respostas devem refletir
+          sua experiência habitual (ao longo da vida, não um dia isolado). O resultado aponta **probabilidade** e **não substitui**
+          entrevista clínica estruturada. Se houver sofrimento intenso, risco ou dúvidas importantes, procure atendimento
+          especializado imediatamente.
+        </p>
+      </div>
+      <label class="toggle" title="Alternar modo claro/escuro"><span class="muted">Modo</span><div class="switch" id="themeSwitch"><i></i></div></label>
+    </div>
+    <div class="onb">
+      <strong>Onboarding – como responder</strong>
+      <ol>
+        <li>Leia cada item e escolha *Aplica-se (Sim)* ou *Não se aplica*.</li>
+        <li>Responda <em>todos</em> os itens; se faltar algo, a correção é bloqueada e o item fica destacado.</li>
+        <li>Veja o resumo claro ao final de cada teste. Depois, gere o *Relatório Integrado* (parágrafos justificados).</li>
+        <li>Você pode copiar o relatório ou enviá-lo ao seu psicólogo pelo WhatsApp.</li>
+      </ol>
+    </div>
+  </header>
+
+  <!-- Identificação -->
+  <section class="card">
+    <h2>Identificação</h2>
+    <div class="grid grid2">
+      <div><label for="nome">Nome completo</label><input id="nome" type="text" placeholder="Ex.: Maria de Souza Silva"></div>
+      <div><label for="idade">Idade</label><input id="idade" type="number" min="0" max="120" placeholder="Ex.: 32"></div>
+      <div><label for="data">Data da aplicação</label><input id="data" type="date"></div>
+      <div><label for="obs">Observações clínicas (opcional)</label><textarea id="obs" placeholder="Contexto, medicação, episódios prévios, comorbidades, risco atual..."></textarea></div>
+    </div>
+  </section>
+
+  <!-- MDQ -->
+  <section class="card" id="mdq-sec">
+    <div class="topbar" style="margin-bottom:8px">
+      <h2 style="margin:0">MDQ – Mood Disorder Questionnaire</h2>
+      <span class="muted criteria">Regras internas ocultas</span>
+    </div>
+    <div class="grid grid2">
+      <div class="q"><legend><strong>Itens 1–13</strong></legend><div id="mdq-items"></div></div>
+      <div class="q">
+        <legend><strong>Condições adicionais</strong></legend>
+        <label for="mdq-simult">Os sintomas marcados “Sim” aconteceram ao mesmo tempo?</label>
+        <select id="mdq-simult"><option value="">Selecione...</option><option value="sim">Aplica-se (Sim)</option><option value="nao">Não se aplica</option></select>
+        <label for="mdq-imp" style="margin-top:8px">Grau de prejuízo causado por esses sintomas</label>
+        <select id="mdq-imp"><option value="">Selecione...</option><option value="nenhum">Nenhum</option><option value="leve">Leve</option><option value="moderado">Moderado</option><option value="grave">Grave</option></select>
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn" id="mdq-score">Corrigir MDQ</button>
+      <button class="btn secondary" id="mdq-clear">Limpar</button>
+    </div>
+    <div id="mdq-out" class="out" aria-live="polite"></div>
+  </section>
+
+  <!-- HCL-32 -->
+  <section class="card" id="hcl-sec">
+    <div class="topbar" style="margin-bottom:8px">
+      <h2 style="margin:0">HCL-32 – Hypomania Checklist</h2>
+      <span class="muted criteria">Cortes internos ocultos</span>
+    </div>
+    <div class="q">
+      <legend><strong>Estado “para cima” – selecione a melhor opção</strong></legend>
+      <div id="hcl-items" class="grid"></div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn" id="hcl-score">Corrigir HCL-32</button>
+      <button class="btn secondary" id="hcl-clear">Limpar</button>
+    </div>
+    <div id="hcl-out" class="out" aria-live="polite"></div>
+  </section>
+
+  <!-- BSDS -->
+  <section class="card" id="bsds-sec">
+    <div class="topbar" style="margin-bottom:8px">
+      <h2 style="margin:0">BSDS – Bipolar Spectrum Diagnostic Scale</h2>
+      <span class="muted criteria">Faixas internas ocultas</span>
+    </div>
+    <div class="q">
+      <legend><strong>Narrativa</strong> – selecione as frases que se aplicam</legend>
+      <div id="bsds-items" class="grid"></div>
+    </div>
+    <div class="q" style="margin-top:10px">
+      <legend><strong>Grau de ajuste global</strong> da narrativa</legend>
+      <label for="bsds-fit" class="muted">Quanto, no geral, a narrativa tem a ver com você?</label>
+      <select id="bsds-fit"><option value="">Selecione...</option><option value="6">Tem tudo ou quase tudo (+6)</option><option value="4">Tem mais ou menos (+4)</option><option value="2">Tem pouco (+2)</option><option value="0">Nada (+0)</option></select>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn" id="bsds-score">Corrigir BSDS</button>
+      <button class="btn secondary" id="bsds-clear">Limpar</button>
+    </div>
+    <div id="bsds-out" class="out" aria-live="polite"></div>
+  </section>
+
+  <!-- MINI -->
+  <section class="card" id="mini-sec">
+    <div class="topbar" style="margin-bottom:8px">
+      <h2 style="margin:0">MINI – Módulo Bipolar (rastreio)</h2>
+      <span class="muted criteria">Regras internas ocultas</span>
+    </div>
+    <div class="grid grid2">
+      <div class="q"><legend><strong>D1–D2</strong></legend><div id="mini-d12" class="grid"></div></div>
+      <div class="q">
+        <legend><strong>D3</strong> (sintomas centrais)</legend>
+        <div id="mini-d3" class="grid"></div>
+        <label for="mini-dur" style="margin-top:8px">Duração do episódio “para cima” mais típico</label>
+        <select id="mini-dur"><option value="">Selecione...</option><option value=">=7">≥ 7 dias</option><option value="4-6">4–6 dias</option><option value="2-3">2–3 dias</option><option value="<2">&lt; 2 dias</option></select>
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn" id="mini-score">Corrigir MINI</button>
+      <button class="btn secondary" id="mini-clear">Limpar</button>
+    </div>
+    <div id="mini-out" class="out" aria-live="polite"></div>
+  </section>
+
+  <!-- Relatório Integrado -->
+  <section class="card">
+    <div class="topbar" style="margin-bottom:8px">
+      <h2 style="margin:0">Relatório Integrado</h2>
+      <span class="muted">Parágrafos justificados e prontos para uso</span>
+    </div>
+    <div class="row">
+      <button class="btn" id="gen-report">Gerar relatório integrado</button>
+      <button class="btn secondary" id="copy-report">Copiar relatório</button>
+      <button class="btn whats" id="send-whats">Enviar ao meu psicólogo</button>
+    </div>
+    <div id="report" class="out para" aria-live="polite"></div>
+    <details style="margin-top:8px">
+      <summary>O que este relatório é (e não é)</summary>
+      <p class="para muted">Texto de triagem automatizada. Serve para orientar a *avaliação clínica*, não sendo diagnóstico. Considerar sempre história, curso temporal, comorbidades (p.ex., TDAH, uso de substâncias, transtornos de personalidade, episódios induzidos por medicação), risco atual e exame do estado mental.</p>
+    </details>
+  </section>
+
+  <footer>Richelmy Murta, Psicólogo Clínico &nbsp; &copy; <span id="yr"></span> – Todos os direitos reservados ®</footer>
+</div>
+
+<script>
+  // ===== Tema =====
+  const savedTheme = localStorage.getItem('tab_theme'); if(savedTheme){ document.documentElement.setAttribute('data-theme', savedTheme); }
+  document.getElementById('themeSwitch').onclick = ()=>{ const cur = document.documentElement.getAttribute('data-theme')==='light'?'dark':'light'; document.documentElement.setAttribute('data-theme',cur); localStorage.setItem('tab_theme',cur); };
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ===== Helpers =====
+  const toSel = (opts)=> `<option value="">Selecione...</option>${opts.map(o=>`<option value="${o.v}">${o.t}</option>`).join('')}`;
+  const fieldYN = ()=> toSel([{v:'sim',t:'Aplica-se (Sim)'},{v:'nao',t:'Não se aplica'}]);
+  const mkQ = (id, text)=>{
+    const w = document.createElement('div'); w.className='q';
+    w.innerHTML = `<label for="${id}">${text}</label><select id="${id}" data-req="1">${fieldYN()}</select>`;
+    return w;
+  };
+  const needAll = (selectors)=>{
+    let ok=true;
+    selectors.forEach(s=>{
+      if(s.value===''){ s.classList.add('invalid'); ok=false; } else { s.classList.remove('invalid'); }
+    });
+    return ok;
+  };
+  const getYNCount = (selectors)=> selectors.filter(s=>s.value==='sim').length;
+
+  // ===== MDQ =====
+  const mdqTexts = [
+    '1. Período de humor muito elevado/hiperativo notado pelos outros?',
+    '2. Mais confiante do que o habitual?',
+    '3. Dormiu menos sem sentir falta?',
+    '4. Mais falante que o habitual?',
+    '5. Pensamentos muito rápidos?',
+    '6. Distraía-se com facilidade?',
+    '7. Aumento de energia/atividade?',
+    '8. Mais sociável/extrovertido(a)?',
+    '9. Mais interesse/atividade sexual?',
+    '10. Fez coisas fora do caráter/arriscadas?',
+    '11. Gastos excessivos/compras impulsivas?',
+    '12. Produtividade incomum?',
+    '13. Irritabilidade com discussões/brigas?'
+  ];
+  const mdqBox = document.getElementById('mdq-items'); const mdqSel=[];
+  mdqTexts.forEach((t,i)=>{ const el = mkQ('mdq'+(i+1), t); mdqBox.appendChild(el); mdqSel.push(el.querySelector('select')); });
+  const mdqSimult = document.getElementById('mdq-simult'); const mdqImp = document.getElementById('mdq-imp');
+
+  document.getElementById('mdq-clear').onclick=()=>{ [...mdqSel,mdqSimult,mdqImp].forEach(s=>{s.value='';s.classList.remove('invalid');}); document.getElementById('mdq-out').textContent=''; };
+
+  function scoreMDQ(){
+    if(!needAll([...mdqSel,mdqSimult,mdqImp])) throw 'Há itens do MDQ sem resposta.';
+    const yes = getYNCount(mdqSel);
+    const simult = mdqSimult.value==='sim';
+    const imp = mdqImp.value;
+    const meets = (yes>=8) && simult && (imp==='moderado' || imp==='grave'); // regra BR (oculta)
+    return {yes, simult, imp, meets};
+  }
+  document.getElementById('mdq-score').onclick=()=>{
+    try{
+      const r=scoreMDQ();
+      const tag = r.meets?'<span class="stat ok">Compatível</span>': (r.yes>=7?'<span class="stat warn">Atenção</span>':'<span class="stat muted">Abaixo do corte</span>');
+      document.getElementById('mdq-out').innerHTML = `MDQ: ${r.yes}/13 “Sim”. Simultaneidade: ${r.simult?'Sim':'Não'}. Prejuízo: ${r.imp||'—'}. ${tag}\nInterpretação objetiva: ${r.meets?'Triagem positiva no MDQ (critério BR).':(r.yes>=7?'Resultado limítrofe/atencional.':'Triagem negativa; correlacionar com clínica.')}`;
+    }catch(e){ alert(e); }
+  };
+
+  // ===== HCL-32 (todos os itens como select) =====
+  const hclItems = [
+    '1. Fico mais falante e expansivo(a).','2. Fico mais ativo(a), com muita energia.',
+    '3. Sou mais confiante/seguro(a).','4. Necessito de menos sono que o normal.',
+    '5. Estou mais criativo(a), cheio(a) de ideias.','6. Sou mais sociável e busco companhia.',
+    '7. Tenho maior interesse/atividade sexual.','8. Assumo mais riscos que o usual.',
+    '9. Sinto-me mais feliz/animado(a).','10. Fico mais impaciente.',
+    '11. Pensamentos acelerados.','12. Decisões mais rápidas.',
+    '13. Faço muitas coisas ao mesmo tempo.','14. Gasto mais dinheiro que deveria.',
+    '15. Fico mais espirituoso(a)/brincalhão(ona).','16. Trabalho/estudo com maior intensidade.',
+    '17. Mais produtivo(a) que o normal.','18. Falo mais alto/mais depressa.',
+    '19. Distraio-me facilmente.','20. Mais irritável.',
+    '21. Condução mais arriscada.','22. Compras por impulso.',
+    '23. Uso mais álcool/cafeína/outros para manter o ritmo.','24. Interrompo os outros com frequência.',
+    '25. Tomo a liderança com facilidade.','26. Planejo muitos projetos simultaneamente.',
+    '27. Sinto-me mais atraente/vaidoso(a).','28. Aumento de discussões.',
+    '29. Menos cuidadoso(a) com regras/prazos.','30. Piadas/comentários inadequados.',
+    '31. Dificuldade de concluir tarefas.','32. Aumento de atividades sociais/festas.'
+  ];
+  const hclBox = document.getElementById('hcl-items'); const hclSel=[];
+  hclItems.forEach((t,i)=>{ const el = mkQ('hcl'+(i+1), t); hclBox.appendChild(el); hclSel.push(el.querySelector('select')); });
+
+  function scoreHCL(){
+    if(!needAll(hclSel)) throw 'Há itens do HCL-32 sem resposta.';
+    const yes = getYNCount(hclSel);
+    const tier = yes>=19 ? 'compatível' : (yes>=14 ? 'atenção' : 'baixo'); // cortes internos
+    return {yes, tier};
+  }
+  document.getElementById('hcl-clear').onclick=()=>{ hclSel.forEach(s=>{s.value='';s.classList.remove('invalid');}); document.getElementById('hcl-out').textContent=''; }
+  document.getElementById('hcl-score').onclick=()=>{
+    try{
+      const r=scoreHCL();
+      const tag = r.tier==='compatível'?'<span class="stat ok">Compatível</span>': (r.tier==='atenção'?'<span class="stat warn">Atenção</span>':'<span class="stat muted">Baixo</span>');
+      document.getElementById('hcl-out').innerHTML = `HCL-32: ${r.yes}/32 “Sim”. ${tag}\nInterpretação objetiva: ${r.tier==='compatível'?'Padrão compatível com traços hipomaníacos.':(r.tier==='atenção'?'Faixa atencional (14–18), correlacionar com clínica.':'Abaixo do corte principal; considerar contexto.')}`;
+    }catch(e){ alert(e); }
+  };
+
+  // ===== BSDS (19 itens + ajuste global) como select =====
+  const bsdsItems = [
+    '1. Períodos “para cima” com energia/confiança incomuns.',
+    '2. Nesses períodos sou mais sociável e falante.',
+    '3. Mente acelerada, muitas ideias.',
+    '4. Preciso de menos sono e fico bem.',
+    '5. Inicio muitos projetos simultaneamente.',
+    '6. Decisões mais rápidas/impulsivas.',
+    '7. Gastos excessivos/assumo riscos.',
+    '8. Mais produtivo(a), às vezes desorganizado(a).',
+    '9. Pessoas notam que estou diferente.',
+    '10. Alterno com quedas de humor/cansaço.',
+    '11. Nas quedas, fico lento(a)/desanimado(a).',
+    '12. Dificuldade de concentração nas quedas.',
+    '13. Culpa/inutilidade/desesperança nas quedas.',
+    '14. Sono aumenta nas quedas.',
+    '15. Oscilações afetam trabalho/estudo.',
+    '16. Mudanças de humor podem ser reativas.',
+    '17. História familiar de depressão/bipolaridade.',
+    '18. Sintomas após privação de sono/estresse.',
+    '19. Ouço que “mudo demais”.'
+  ];
+  const bsdsBox = document.getElementById('bsds-items'); const bsdsSel=[];
+  bsdsItems.forEach((t,i)=>{ const el = mkQ('bsds'+(i+1), t); bsdsBox.appendChild(el); bsdsSel.push(el.querySelector('select')); });
+  const bsdsFit = document.getElementById('bsds-fit');
+
+  function scoreBSDS(){
+    if(!needAll([...bsdsSel,bsdsFit])) throw 'Há itens do BSDS sem resposta.';
+    const yes = getYNCount(bsdsSel);
+    const total = yes + Number(bsdsFit.value);
+    let tier='improvavel'; if(total>=20) tier='provavel'; else if(total>=13) tier='possivel';
+    return {yes,total,tier};
+  }
+  document.getElementById('bsds-clear').onclick=()=>{ bsdsSel.forEach(s=>{s.value='';s.classList.remove('invalid');}); bsdsFit.value=''; bsdsFit.classList.remove('invalid'); document.getElementById('bsds-out').textContent=''; }
+  document.getElementById('bsds-score').onclick=()=>{
+    try{
+      const r=scoreBSDS();
+      const tag = r.tier==='provavel'?'<span class="stat ok">Provável</span>': (r.tier==='possivel'?'<span class="stat warn">Possível</span>':'<span class="stat muted">Improvável</span>');
+      document.getElementById('bsds-out').innerHTML = `BSDS: base ${r.yes}/19 + ajuste = **${r.total}**. ${tag}\nInterpretação objetiva: ${r.tier==='provavel'?'Perfil compatível com espectro bipolar.':(r.tier==='possivel'?'Perfil possível; aprofundar avaliação.':'Improvável pelo BSDS, considerar contexto.')}`;
+    }catch(e){ alert(e); }
+  };
+
+  // ===== MINI (selects) =====
+  const miniD12 = [
+    'D1. Período de humor elevado/expansivo/irritável?',
+    'D2. Diferente do funcionamento habitual de forma clara?'
+  ];
+  const miniD3 = [
+    'Autoestima elevada/grandiosidade.',
+    'Redução da necessidade de sono.',
+    'Mais loquaz/pressão para falar.',
+    'Fuga de ideias/pensamento acelerado.',
+    'Distratibilidade.',
+    'Aumento da atividade dirigida a objetivos/agitação.',
+    'Envolvimento em atividades com alto potencial de consequências.'
+  ];
+  const miniD12Box = document.getElementById('mini-d12'); const mini12Sel=[];
+  miniD12.forEach((t,i)=>{ const el=mkQ('mini12_'+(i+1), t); miniD12Box.appendChild(el); mini12Sel.push(el.querySelector('select')); });
+  const miniD3Box = document.getElementById('mini-d3'); const mini3Sel=[];
+  miniD3.forEach((t,i)=>{ const el=mkQ('mini3_'+(i+1), 'D3.'+(i+1)+' '+t); miniD3Box.appendChild(el); mini3Sel.push(el.querySelector('select')); });
+  const miniDur = document.getElementById('mini-dur');
+
+  function scoreMINI(){
+    if(!needAll([...mini12Sel])) throw 'Responda D1–D2 no MINI.';
+    if(mini12Sel.some(s=>s.value==='nao')) return {gate:false};
+    if(!needAll([...mini3Sel,miniDur])) throw 'Complete os sintomas D3 e a duração no MINI.';
+    const d3 = getYNCount(mini3Sel);
+    const dur = miniDur.value;
+    const mania = (d3>=3) && (dur==='>=7');
+    const hypo  = (d3>=3) && (dur!=='>=7');
+    return {gate:true,d3,dur,mania,hypo};
+  }
+  document.getElementById('mini-clear').onclick=()=>{ [...mini12Sel, ...mini3Sel].forEach(s=>{s.value='';s.classList.remove('invalid');}); miniDur.value=''; miniDur.classList.remove('invalid'); document.getElementById('mini-out').textContent=''; }
+  document.getElementById('mini-score').onclick=()=>{
+    try{
+      const r=scoreMINI();
+      let txt=''; let tag='<span class="stat muted">Inconclusivo</span>';
+      if(!r.gate){ txt='Porta de entrada negativa (D1/D2).'; }
+      else if(r.mania){ tag='<span class="stat ok">Compatível (mania)</span>'; txt='Padrão compatível com episódio maníaco em rastreio.'; }
+      else if(r.hypo){ tag='<span class="stat warn">Compatível (hipomania)</span>'; txt='Padrão compatível com episódio hipomaníaco em rastreio.'; }
+      else{ txt=`D3 = ${r.d3}/7; duração ${r.dur||'—'}. Sem evidência suficiente para classificar.`; }
+      document.getElementById('mini-out').innerHTML = `MINI: ${tag}\n${txt}`;
+    }catch(e){ alert(e); }
+  };
+
+  // ===== Relatório Integrado =====
+  const idVal = id => document.getElementById(id).value.trim();
+  const reportEl = document.getElementById('report');
+
+  function safeMDQ(){ try{return scoreMDQ();}catch{ return null; } }
+  function safeHCL(){ try{return scoreHCL();}catch{ return null; } }
+  function safeBSDS(){ try{return scoreBSDS();}catch{ return null; } }
+  function safeMINI(){ try{return scoreMINI();}catch{ return null; } }
+
+  document.getElementById('gen-report').onclick=()=>{
+    if(!idVal('nome') || !idVal('data')){ alert('Preencha *Nome* e *Data da aplicação* em Identificação.'); return; }
+
+    const mdq=safeMDQ(), hcl=safeHCL(), bsds=safeBSDS(), mini=safeMINI();
+
+    const p1 = `Avaliado(a): ${idVal('nome')}, ${idVal('idade')?idVal('idade')+' anos, ':''}aplicação em ${idVal('data')}. Instrumentos: MDQ, HCL-32, BSDS e MINI (módulo bipolar). Resultados interpretados como *triagem*, devendo ser correlacionados com entrevista clínica, curso temporal e comorbidades.`;
+
+    const pMdq = mdq ? (`No MDQ, ${mdq.yes}/13 “Sim”, ${mdq.simult?'com':'sem'} simultaneidade; prejuízo ${mdq.imp||'—'}. ` +
+                       (mdq.meets?'Padrão *compatível* com triagem positiva.':(mdq.yes>=7?'Resultado *limítrofe*; atenção clínica.':'Abaixo do corte principal.')))
+                     : 'MDQ: não corrigido por falta de itens respondidos.';
+
+    const pHcl = hcl ? (`No HCL-32, ${hcl.yes}/32 “Sim”. ` +
+                       (hcl.tier==='compatível'?'Valor *compatível* com traços hipomaníacos.':(hcl.tier==='atenção'?'Faixa *atencional* (14–18).':'Abaixo do corte principal.')))
+                     : 'HCL-32: não corrigido por falta de itens respondidos.';
+
+    const pBs = bsds ? (`No BSDS, base ${bsds.yes}/19; total **${bsds.total}**. ` +
+                       (bsds.tier==='provavel'?'Interpretação: *provável* espectro bipolar.':(bsds.tier==='possivel'?'Interpretação: *possível*.':'Interpretação: *improvável*.')))
+                     : 'BSDS: não corrigido por falta de itens respondidos.';
+
+    let pMi='MINI: não corrigido.';
+    if(mini){
+      if(mini.gate===false){ pMi='MINI: porta de entrada negativa (D1/D2).'; }
+      else if(mini.gate===true){
+        pMi = `MINI: D3=${mini.d3}/7; duração ${mini.dur||'—'}. ` + (mini.mania?'*Compatível (mania)*.':(mini.hypo?'*Compatível (hipomania)*.':'Sem evidência suficiente.'));
+      }
+    }
+
+    const converge = (mdq&&mdq.meets) && ((hcl&&hcl.tier==='compatível') || (bsds&&bsds.tier==='provavel') || (mini&& (mini.mania||mini.hypo)));
+    const borderline = (!converge) && (
+      (mdq && (mdq.yes>=7)) || (hcl && hcl.tier==='atenção') || (bsds && bsds.tier==='possivel')
+    );
+
+    const pSynth = `Síntese integrativa: ${
+      converge ? 'há indicação consistente de traços do espectro bipolar, recomendando-se avaliação diagnóstica estruturada' :
+      (borderline ? 'há sinais sugestivos que justificam aprofundamento e exclusão de mimetizadores (p.ex., TDAH, uso de substâncias, episódios induzidos por antidepressivos/estimulantes)' :
+      'os achados deste rastreio não sustentam hipótese forte; manter vigilância clínica conforme contexto')
+    }.`
+
+    const obs = idVal('obs') ? `Observações clínicas: ${idVal('obs')}` : '';
+
+    reportEl.textContent = [p1,pMdq,pHcl,pBs,pMi,pSynth,obs].filter(Boolean).join('\n\n');
+  };
+
+  document.getElementById('copy-report').onclick = async()=>{
+    if(!reportEl.textContent.trim()){ alert('Gere o relatório antes de copiar.'); return; }
+    await navigator.clipboard.writeText(reportEl.textContent);
+    alert('Relatório copiado.');
+  };
+
+  document.getElementById('send-whats').onclick = ()=>{
+    if(!reportEl.textContent.trim()){ alert('Gere o relatório antes de enviar.'); return; }
+    const nome = idVal('nome')||'Paciente';
+    const payload = `*Bateria TAB – ${nome}*\n\n${reportEl.textContent}`;
+    window.open('https://wa.me/5535984640729?text='+encodeURIComponent(payload),'_blank');
+  };
+
+  // feedback visual
+  document.addEventListener('change',(e)=>{const t=e.target;if(t.classList.contains('invalid')&&t.value!==''){t.classList.remove('invalid');}});
+</script>
+</body>
+</html>
