@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!-- SEO básico -->
 <meta name="description" content="Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB): MDQ, HCL-32, BSDS e MINI (módulo bipolar). Triagem clínica com relatório integrado.">
 <meta name="keywords" content="transtorno afetivo bipolar, TAB, MDQ, HCL-32, BSDS, MINI, rastreio, triagem clínica, psicologia">
@@ -9,13 +12,13 @@
 <meta name="theme-color" content="#0f172a">
 
 <!-- Canonical (ajuste para a URL final da página) -->
-<link rel="canonical" href="https://exemplo.seu-dominio.com/TAB.html">
+<link rel="canonical" href="https://ricmurtapsicologia.github.io/tab-bateria-integrada/">
 
 <!-- Open Graph (WhatsApp/Facebook/LinkedIn) -->
 <meta property="og:title" content="Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB)">
 <meta property="og:description" content="Aplicação integrada de MDQ, HCL-32, BSDS e MINI para triagem clínica. Resultados claros e relatório justificado.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://exemplo.seu-dominio.com/TAB.html">
+<meta property="og:url" content="https://ricmurtapsicologia.github.io/tab-bateria-integrada/">
 <meta property="og:site_name" content="Richelmy Murta Psicologia">
 <meta property="og:locale" content="pt_BR">
 
@@ -63,7 +66,12 @@
     --ok:#16a34a; --warn:#d97706; --bad:#dc2626; --focus:#2563eb; --shadow:0 12px 28px rgba(2,6,23,.08);
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.45}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    line-height:1.55; /* leve ganho geral */
+    font-size:16px;   /* base desktop/tablet */
+  }
   .wrap{max-width:1200px;margin:0 auto;padding:24px}
   header{background:var(--panel);border:1px solid var(--border);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);margin-bottom:20px}
   h1{margin:0 0 6px 0;letter-spacing:.2px}
@@ -99,8 +107,20 @@
   details{border:1px solid var(--border);border-radius:12px;background:var(--panel);padding:10px}
   details summary{cursor:pointer;font-weight:800}
   footer{margin:28px 0 8px;text-align:center;color:var(--muted)}
-  /* oculta qualquer dica de corte visível ao paciente */
   .criteria{display:none !important}
+
+  /* ===== Melhor legibilidade em telas pequenas ===== */
+  @media (max-width: 640px){
+    body{ font-size:17.5px; line-height:1.7; }
+    .wrap{ padding:18px; }
+    header, .card, .onb{ padding:18px; }
+    h1{ font-size:1.35rem; }
+    label{ font-size:1.02rem; }
+    input,select,textarea{ font-size:1rem; padding:14px 16px; }
+    .btn{ font-size:1rem; padding:14px 18px; }
+    .lead{ font-size:1.02rem; }
+    .q{ padding:16px; }
+  }
 </style>
 </head>
 <body>
