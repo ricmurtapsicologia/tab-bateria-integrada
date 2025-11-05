@@ -130,8 +130,8 @@
       <div>
         <h1>Bateria de Rastreio – Transtorno Afetivo Bipolar (TAB)</h1>
         <p class="lead para">
-          Este instrumento reúne MDQ, HCL-32, BSDS e o módulo bipolar do MINI para *triagem clínica*. As respostas devem refletir
-          sua experiência habitual (ao longo da vida, não um dia isolado). O resultado aponta **probabilidade** e **não substitui**
+          Este instrumento reúne MDQ, HCL-32, BSDS e o módulo bipolar do MINI para triagem clínica. As respostas devem refletir
+          sua experiência habitual (ao longo da vida, não um dia isolado). O resultado aponta probabilidade e não substitui
           entrevista clínica estruturada. Se houver sofrimento intenso, risco ou dúvidas importantes, procure atendimento
           especializado imediatamente.
         </p>
@@ -141,9 +141,9 @@
     <div class="onb">
       <strong>Onboarding – como responder</strong>
       <ol>
-        <li>Leia cada item e escolha *Aplica-se (Sim)* ou *Não se aplica*.</li>
+        <li>Leia cada item e escolha Aplica-se (Sim) ou Não se aplica.</li>
         <li>Responda <em>todos</em> os itens; se faltar algo, a correção é bloqueada e o item fica destacado.</li>
-        <li>Veja o resumo claro ao final de cada teste. Depois, gere o *Relatório Integrado* (parágrafos justificados).</li>
+        <li>Veja o resumo claro ao final de cada teste. Depois, gere o Relatório Integrado (parágrafos justificados).</li>
         <li>Você pode copiar o relatório ou enviá-lo ao seu psicólogo pelo WhatsApp.</li>
       </ol>
     </div>
@@ -258,7 +258,7 @@
     <div id="report" class="out para" aria-live="polite"></div>
     <details style="margin-top:8px">
       <summary>O que este relatório é (e não é)</summary>
-      <p class="para muted">Texto de triagem automatizada. Serve para orientar a *avaliação clínica*, não sendo diagnóstico. Considerar sempre história, curso temporal, comorbidades (p.ex., TDAH, uso de substâncias, transtornos de personalidade, episódios induzidos por medicação), risco atual e exame do estado mental.</p>
+      <p class="para muted">Texto de triagem automatizada. Serve para orientar a avaliação clínica, não sendo diagnóstico. Considerar sempre história, curso temporal, comorbidades (p.ex., TDAH, uso de substâncias, transtornos de personalidade, episódios induzidos por medicação), risco atual e exame do estado mental.</p>
     </details>
   </section>
 
@@ -465,15 +465,15 @@
     const p1 = `Avaliado(a): ${idVal('nome')}, ${idVal('idade')?idVal('idade')+' anos, ':''}aplicação em ${idVal('data')}. Instrumentos: MDQ, HCL-32, BSDS e MINI (módulo bipolar). Resultados interpretados como *triagem*, devendo ser correlacionados com entrevista clínica, curso temporal e comorbidades.`;
 
     const pMdq = mdq ? (`No MDQ, ${mdq.yes}/13 “Sim”, ${mdq.simult?'com':'sem'} simultaneidade; prejuízo ${mdq.imp||'—'}. ` +
-                       (mdq.meets?'Padrão *compatível* com triagem positiva.':(mdq.yes>=7?'Resultado *limítrofe*; atenção clínica.':'Abaixo do corte principal.')))
+                       (mdq.meets?'Padrão compatível com triagem positiva.':(mdq.yes>=7?'Resultado limítrofe; atenção clínica.':'Abaixo do corte principal.')))
                      : 'MDQ: não corrigido por falta de itens respondidos.';
 
     const pHcl = hcl ? (`No HCL-32, ${hcl.yes}/32 “Sim”. ` +
-                       (hcl.tier==='compatível'?'Valor *compatível* com traços hipomaníacos.':(hcl.tier==='atenção'?'Faixa *atencional* (14–18).':'Abaixo do corte principal.')))
+                       (hcl.tier==='compatível'?'Valor compatível com traços hipomaníacos.':(hcl.tier==='atenção'?'Faixa atencional (14–18).':'Abaixo do corte principal.')))
                      : 'HCL-32: não corrigido por falta de itens respondidos.';
 
     const pBs = bsds ? (`No BSDS, base ${bsds.yes}/19; total **${bsds.total}**. ` +
-                       (bsds.tier==='provavel'?'Interpretação: *provável* espectro bipolar.':(bsds.tier==='possivel'?'Interpretação: *possível*.':'Interpretação: *improvável*.')))
+                       (bsds.tier==='provavel'?'Interpretação: provável espectro bipolar.':(bsds.tier==='possivel'?'Interpretação: possível.':'Interpretação: *improvável*.')))
                      : 'BSDS: não corrigido por falta de itens respondidos.';
 
     let pMi='MINI: não corrigido.';
