@@ -1,0 +1,83 @@
+name: Native Form Structure v1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/native-form-structure-v1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Convert legacy container to explicit non-submitting form
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          script_marker='\n<script>'
+          if script_marker not in s:
+              raise SystemExit('SCRIPT_MARKER_MISSING')
+          html, protected=s.split(script_marker,1)
+          original_protected=protected
+
+          if 'id="screeningForm"' not in html:
+              start='\n  <!-- Identificação -->'
+              if start not in html:
+                  raise SystemExit('IDENTITY_MARKER_MISSING')
+              html=html.replace(start,'\n  <form id="screeningForm" novalidate onsubmit="return false;">\n\n  <!-- Identificação -->',1)
+
+              end='\n  <footer>'
+              if end not in html:
+                  raise SystemExit('FOOTER_MARKER_MISSING')
+              html=html.replace(end,'\n  </form>\n\n  <footer>',1)
+
+          html=re.sub(r'<button(?![^>]*\btype\s*=)([^>]*)>',r'<button type="button"\1>',html,flags=re.I)
+
+          out=html+script_marker+protected
+          if out.split(script_marker,1)[1] != original_protected:
+              raise SystemExit('CLINICAL_SCRIPT_CHANGED')
+          if html.count('id="screeningForm"') != 1:
+              raise SystemExit('SCREENING_FORM_COUNT_INVALID')
+          if not re.search(r'<form\b[^>]*id="screeningForm"[^>]*onsubmit="return false;"',html,re.I):
+              raise SystemExit('NON_SUBMITTING_FORM_MISSING')
+          buttons=re.findall(r'<button\b[^>]*>',html,re.I)
+          if len(buttons) < 10:
+              raise SystemExit(f'UNEXPECTED_BUTTON_COUNT_{len(buttons)}')
+          unsafe=[b for b in buttons if not re.search(r'\btype="button"',b,re.I)]
+          if unsafe:
+              raise SystemExit('BUTTON_WITHOUT_EXPLICIT_TYPE')
+
+          p.write_text(out,encoding='utf-8')
+          PY
+
+      - name: Validate structure without enabling delivery
+        shell: bash
+        run: |
+          grep -q 'id="screeningForm"' index.html
+          grep -q 'onsubmit="return false;"' index.html
+          grep -q 'type="button" class="btn" id="mdq-score"' index.html
+          grep -q 'type="button" class="btn" id="gen-report"' index.html
+          grep -q 'id="mdq-sec"' index.html
+          grep -q 'id="hcl-sec"' index.html
+          grep -q 'id="bsds-sec"' index.html
+
+      - name: Commit structural migration
+        shell: bash
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Converte bateria bipolar para formulário estrutural sem submissão'
+          git push
