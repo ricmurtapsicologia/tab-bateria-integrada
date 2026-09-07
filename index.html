@@ -95,7 +95,6 @@
   .row{display:flex;gap:10px;flex-wrap:wrap}
   .btn{appearance:none;border:none;border-radius:12px;padding:12px 16px;cursor:pointer;color:#fff;background:linear-gradient(120deg,var(--accent),var(--accent2));font-weight:800;box-shadow:0 10px 18px rgba(0,0,0,.25)}
   .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-  .btn.whats{background:#25D366;color:#083d1a}
   .out{margin-top:10px;padding:14px;border-radius:12px;background:var(--card);border:1px dashed var(--border);white-space:pre-wrap}
   .muted{color:var(--muted)}
   .stat{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800}
@@ -145,7 +144,7 @@
         <li>Leia cada item e escolha Aplica-se (Sim) ou Não se aplica.</li>
         <li>Responda <em>todos</em> os itens; se faltar algo, a correção é bloqueada e o item fica destacado.</li>
         <li>Veja o resumo claro ao final de cada teste. Depois, gere o Relatório Integrado (parágrafos justificados).</li>
-        <li>Você pode copiar o relatório ou enviá-lo ao seu psicólogo pelo WhatsApp.</li>
+        
       </ol>
     </div>
   </header>
@@ -254,8 +253,7 @@
     <div class="row">
       <button class="btn" id="gen-report">Gerar relatório integrado</button>
       <button class="btn secondary" id="copy-report">Copiar relatório</button>
-      <button class="btn whats" id="send-whats">Enviar ao meu psicólogo</button>
-    </div>
+</div>
     <div id="report" class="out para" aria-live="polite"></div>
     <details style="margin-top:8px">
       <summary>O que este relatório é (e não é)</summary>
@@ -506,15 +504,7 @@
     await navigator.clipboard.writeText(reportEl.textContent);
     alert('Relatório copiado.');
   };
-
-  document.getElementById('send-whats').onclick = ()=>{
-    if(!reportEl.textContent.trim()){ alert('Gere o relatório antes de enviar.'); return; }
-    const nome = idVal('nome')||'Paciente';
-    const payload = `*Bateria TAB – ${nome}*\n\n${reportEl.textContent}`;
-    window.open('https://wa.me/5535984640729?text='+encodeURIComponent(payload),'_blank');
-  };
-
-  // feedback visual
+// feedback visual
   document.addEventListener('change',(e)=>{const t=e.target;if(t.classList.contains('invalid')&&t.value!==''){t.classList.remove('invalid');}});
 </script>
   <script src="https://ricmurtapsicologia.github.io/plataforma.terapeutica/assets/js/screening-uniformity-v1.js?v=1.0.0" defer></script>
