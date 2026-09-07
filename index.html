@@ -149,6 +149,8 @@
     </div>
   </header>
 
+  <form id="screeningForm" novalidate onsubmit="return false;">
+
   <!-- Identificação -->
   <section class="card">
     <h2>Identificação</h2>
@@ -178,8 +180,8 @@
       </div>
     </div>
     <div class="row" style="margin-top:10px">
-      <button class="btn" id="mdq-score">Corrigir MDQ</button>
-      <button class="btn secondary" id="mdq-clear">Limpar</button>
+      <button type="button" class="btn" id="mdq-score">Corrigir MDQ</button>
+      <button type="button" class="btn secondary" id="mdq-clear">Limpar</button>
     </div>
     <div id="mdq-out" class="out" aria-live="polite"></div>
   </section>
@@ -195,8 +197,8 @@
       <div id="hcl-items" class="grid"></div>
     </div>
     <div class="row" style="margin-top:10px">
-      <button class="btn" id="hcl-score">Corrigir HCL-32</button>
-      <button class="btn secondary" id="hcl-clear">Limpar</button>
+      <button type="button" class="btn" id="hcl-score">Corrigir HCL-32</button>
+      <button type="button" class="btn secondary" id="hcl-clear">Limpar</button>
     </div>
     <div id="hcl-out" class="out" aria-live="polite"></div>
   </section>
@@ -217,8 +219,8 @@
       <select id="bsds-fit"><option value="">Selecione...</option><option value="6">Tem tudo ou quase tudo (+6)</option><option value="4">Tem mais ou menos (+4)</option><option value="2">Tem pouco (+2)</option><option value="0">Nada (+0)</option></select>
     </div>
     <div class="row" style="margin-top:10px">
-      <button class="btn" id="bsds-score">Corrigir BSDS</button>
-      <button class="btn secondary" id="bsds-clear">Limpar</button>
+      <button type="button" class="btn" id="bsds-score">Corrigir BSDS</button>
+      <button type="button" class="btn secondary" id="bsds-clear">Limpar</button>
     </div>
     <div id="bsds-out" class="out" aria-live="polite"></div>
   </section>
@@ -239,8 +241,8 @@
       </div>
     </div>
     <div class="row" style="margin-top:10px">
-      <button class="btn" id="mini-score">Corrigir MINI</button>
-      <button class="btn secondary" id="mini-clear">Limpar</button>
+      <button type="button" class="btn" id="mini-score">Corrigir MINI</button>
+      <button type="button" class="btn secondary" id="mini-clear">Limpar</button>
     </div>
     <div id="mini-out" class="out" aria-live="polite"></div>
   </section>
@@ -252,8 +254,8 @@
       <span class="muted">Parágrafos justificados e prontos para uso</span>
     </div>
     <div class="row">
-      <button class="btn" id="gen-report">Gerar relatório integrado</button>
-      <button class="btn secondary" id="copy-report">Copiar relatório</button>
+      <button type="button" class="btn" id="gen-report">Gerar relatório integrado</button>
+      <button type="button" class="btn secondary" id="copy-report">Copiar relatório</button>
 </div>
     <div id="report" class="out para" aria-live="polite"></div>
     <details style="margin-top:8px">
@@ -261,6 +263,8 @@
       <p class="para muted">Texto de triagem automatizada. Serve para orientar a avaliação clínica, não sendo diagnóstico. Considerar sempre história, curso temporal, comorbidades (p.ex., TDAH, uso de substâncias, transtornos de personalidade, episódios induzidos por medicação), risco atual e exame do estado mental.</p>
     </details>
   </section>
+
+  </form>
 
   <footer>Richelmy Murta, Psicólogo Clínico &nbsp; &copy; <span id="yr"></span> – 2026 Todos os direitos reservados ®</footer>
 </div>
