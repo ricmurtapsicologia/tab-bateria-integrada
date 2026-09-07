@@ -1,0 +1,61 @@
+name: Canonical Identity v2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/canonical-identity-v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add canonical identity fields safely
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          marker='  <!-- MDQ -->'
+          if marker not in s:
+              raise SystemExit('QUESTION_MARKER_MISSING')
+          before, protected=s.split(marker,1)
+          original_protected=protected
+          if 'id="dataNascimento"' not in before:
+              old='''      <div><label for="nome">Nome completo</label><input id="nome" type="text" placeholder="Ex.: Maria de Souza Silva"></div>\n      <div><label for="idade">Idade</label><input id="idade" type="number" min="0" max="120" placeholder="Ex.: 32"></div>\n      <div><label for="data">Data da aplicação</label><input id="data" type="date"></div>'''
+              new='''      <div><label for="nome">Nome completo</label><input id="nome" type="text" placeholder="Ex.: Maria de Souza Silva" required></div>\n      <div><label for="idade">Idade</label><input id="idade" type="number" min="0" max="120" placeholder="Ex.: 32"></div>\n      <div><label for="dataNascimento">Data de nascimento</label><input id="dataNascimento" type="date" required></div>\n      <div><label for="data">Data de aplicação do rastreio</label><input id="data" type="date" required></div>'''
+              if old not in before:
+                  raise SystemExit('IDENTITY_BLOCK_NOT_FOUND')
+              before=before.replace(old,new,1)
+          out=before+marker+protected
+          if out.split(marker,1)[1] != original_protected:
+              raise SystemExit('PSYCHOMETRY_OR_LOGIC_CHANGED')
+          p.write_text(out,encoding='utf-8')
+          PY
+      - name: Validate canonical identity and protected psychometry
+        shell: bash
+        run: |
+          grep -q 'id="nome"' index.html
+          grep -q 'id="dataNascimento"' index.html
+          grep -q 'id="data"' index.html
+          grep -q 'Data de aplicação do rastreio' index.html
+          grep -q '<!-- MDQ -->' index.html
+          grep -q 'id="mdq-sec"' index.html
+          grep -q 'id="hcl-sec"' index.html
+          grep -q 'id="bsds-sec"' index.html
+      - name: Commit migration
+        shell: bash
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Adiciona identificação canônica à bateria bipolar'
+          git push
