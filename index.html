@@ -153,9 +153,10 @@
   <section class="card">
     <h2>Identificação</h2>
     <div class="grid grid2">
-      <div><label for="nome">Nome completo</label><input id="nome" type="text" placeholder="Ex.: Maria de Souza Silva"></div>
+      <div><label for="nome">Nome completo</label><input id="nome" type="text" placeholder="Ex.: Maria de Souza Silva" required></div>
       <div><label for="idade">Idade</label><input id="idade" type="number" min="0" max="120" placeholder="Ex.: 32"></div>
-      <div><label for="data">Data da aplicação</label><input id="data" type="date"></div>
+      <div><label for="dataNascimento">Data de nascimento</label><input id="dataNascimento" type="date" required></div>
+      <div><label for="data">Data de aplicação do rastreio</label><input id="data" type="date" required></div>
       <div><label for="obs">Observações clínicas (opcional)</label><textarea id="obs" placeholder="Contexto, medicação, episódios prévios, comorbidades, risco atual..."></textarea></div>
     </div>
   </section>
