@@ -1,0 +1,44 @@
+name: Remover WhatsApp de resultados v2
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/remove-whatsapp-v2.yml']
+permissions:
+  contents: write
+jobs:
+  sanitize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove patient result sharing without touching items or scorers
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html'); s=p.read_text(encoding='utf-8'); before=s
+          s=re.sub(r'\s*\.btn\.whats\s*\{[^}]*\}', '', s, count=1, flags=re.S|re.I)
+          s=re.sub(r'\s*<button\s+class=["\']btn whats["\']\s+id=["\']send-whats["\'][^>]*>.*?</button>\s*', '\n', s, count=1, flags=re.S|re.I)
+          s=re.sub(r"\s*document\.getElementById\(['\"]send-whats['\"]\)\.onclick\s*=\s*\(\)\s*=>\s*\{.*?window\.open\(['\"]https://wa\.me/.*?\};\s*", '\n', s, count=1, flags=re.S|re.I)
+          s=s.replace('<li>Você pode copiar o relatório ou enviá-lo ao seu psicólogo pelo WhatsApp.</li>', '')
+          if s==before: raise SystemExit('NO_WHATSAPP_CHANGE')
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Contract check
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text(encoding='utf-8')
+          if re.search(r'wa\.me|id=["\']send-whats["\']|btn\.whats', s, re.I): raise SystemExit('WHATSAPP_RESULT_RESIDUE')
+          for marker in ['id="mdq-items"','id="hcl-items"','id="bsds-sec"','id="mini-sec"','id="gen-report"']:
+              if marker not in s: raise SystemExit('QUESTIONNAIRE_STRUCTURE_CHANGED:'+marker)
+          PY
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Remove envio de resultados por WhatsApp'
+          git push
