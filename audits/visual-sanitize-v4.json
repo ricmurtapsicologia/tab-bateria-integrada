@@ -1,0 +1,15 @@
+{
+  "instrument": "bipolar",
+  "title": "Bateria de Rastreio — Transtorno Afetivo Bipolar (TAB)",
+  "before": {
+    "pinimg": 4,
+    "unsplash": 0,
+    "splash": 0
+  },
+  "after": {
+    "pinimg": 0,
+    "unsplash": 0,
+    "splash": 0
+  },
+  "canonicalHero": "https://ricmurtapsicologia.github.io/Inicio-de-Jornada-Terapeutica/assets/heroes/bipolar.jpg?v=4.0.0"
+}
